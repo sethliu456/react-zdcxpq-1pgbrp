@@ -2,8 +2,8 @@ import * as React from 'react';
 
 const StandardPackage = () => {
   return (
-    <div className="ss-package">
-      <div id="officer" className="ss-details-column">
+    <div className="md:flex gap-8">
+      <div className="flex-1">
         <header className="font-bold">
           Inside info from a formal admissions officer
         </header>
@@ -22,7 +22,7 @@ const StandardPackage = () => {
           <li>Data driven admissionsn analyisis taylored to your situaion</li>
         </ul>
       </div>
-      <div id="writer" className="ss-details-column">
+      <div className="flex-1">
         <header className="font-bold">
           Editorial feedback from a professional writer
         </header>

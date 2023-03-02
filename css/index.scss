@@ -518,14 +518,14 @@
 
   /*****************************
   ******************************/
-  .ss-package {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-  }
-  .ss-details-column {
-    width: 500px;
-  }
+  // .ss-package {
+  //   display: flex;
+  //   justify-content: space-evenly;
+  //   flex-wrap: wrap;
+  // }
+  // .ss-details-column {
+  //   width: 500px;
+  // }
   .ss-divider {
     @extend .text-gray-600;
     margin: 0.2rem 0 0.8rem 0;

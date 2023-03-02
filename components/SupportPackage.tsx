@@ -2,8 +2,8 @@ import * as React from 'react';
 
 const SupportPackage = () => {
   return (
-    <div className="ss-package">
-      <div id="officer" className="ss-details-column">
+    <div className="md:flex gap-8">
+      <div id="officer" className="flex-1">
         <header className="font-bold">
           Close the deal with a former admissions officer
         </header>
@@ -13,7 +13,7 @@ const SupportPackage = () => {
           <li>Scholarship negotation strategy.</li>
         </ul>
       </div>
-      <div id="writer" className="ss-details-column">
+      <div id="writer" className="flex-1">
         <header className="font-bold">
           Finalize your materials with professional writer
         </header>
