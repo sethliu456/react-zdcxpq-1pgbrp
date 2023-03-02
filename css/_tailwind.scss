@@ -1,0 +1,148 @@
+/*****************************
+  TailwindCSS utility classes
+  (Manually added as needed)
+******************************/
+
+.w-50 {
+  width: 50%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.gap-12 {
+  gap: 3rem;
+}
+
+.gap-16 {
+  gap: 4rem;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.my-2 {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.my-4 {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.my-6 {
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.my-8 {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mt-2 {
+  margin-top: .5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.font-normal {
+  font-weight: normal;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}

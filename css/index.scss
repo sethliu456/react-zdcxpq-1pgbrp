@@ -1,0 +1,647 @@
+// @import 'base-ss-website'; // Use only when developing in isolation
+@import 'tailwind-pre-build';
+@import 'tailwind';
+@import 'dev';
+
+#app--pricing-admissions {
+  /*****************************
+    Global settings 
+  ******************************/
+  --ss-pricing-primary: #00a4e3;
+  --ss-pricing-primary-dark: hsl(200, 56%, 35%);
+  --ss-pricing-dark: #758289;
+  --ss-pricing-light: hsl(200, 10%, 81%);
+  --ss-pricing-mid: hsl(200, 10%, 66%);
+  --ss-pricing-bar: hsl(10, 86%, 70%);
+  --ss-pricing-sm: 1rem;
+  --ss-pricing-xs: 0.8rem;
+  --ss-pricing-font: var(var(--7s-fonts-primary), Avenir);
+  --ss-pricing-mint-light: #84d3ce;
+  --ss-pricing-mint-lightest: #f4fafa;
+  --ss-pricing-mint: #5cccc5;
+  --ss-pricing-mint-dark: #278881;
+
+  /*****************************
+    Custom pricing
+  ******************************/
+  // .ss2-btn-add {
+  //   background: white;
+  //   border: 2px solid var(--ss-pricing-primary);
+  //   border-radius: 999px;
+  //   color: var(--ss-pricing-primary);
+  // }
+
+  /*****************************
+    Utility styles
+  ******************************/
+  // Typography
+  .ss2-h3 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .ss2-body {
+    font-size: 20px;
+  }
+
+  .ss2-2xs {
+    font-size: 0.8rem;
+  }
+
+  .ss2-xs {
+    font-size: 0.9rem;
+  }
+
+  .ss2-sm {
+    font-size: 16px;
+  }
+
+  .ss2-md {
+    font-size: 20px;
+  }
+
+  .ss2-lg {
+    font-size: 1.5rem;
+  }
+
+  .ss2-xl {
+    font-size: 2rem;
+  }
+
+  // Blocks
+  .ss2-rounded {
+    border-radius: 0.5rem;
+  }
+
+  .ss2-border {
+    border: 1px solid #ccc;
+  }
+
+  // Colors
+  .ss2-gray {
+    color: #888;
+  }
+
+  .ss2-mint {
+    color: var(--ss-pricing-mint);
+  }
+
+  .ss2--color-alt,
+  .--color-mint {
+    color: var(--ss-pricing-mint);
+  }
+
+  .--color-mint-light {
+    color: var(--ss-pricing-mint-light);
+  }
+
+  /* Components */
+
+  // HR
+  .ss2-hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    height: 0;
+    margin: 2rem 0;
+    width: 100%;
+  }
+
+  // Box
+  .ss2-box {
+    @extend .ss2-rounded;
+  }
+
+  .ss2-box--inset {
+    box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.05);
+  }
+
+  .ss2-box--pad {
+    padding: 2rem;
+  }
+
+  // Button
+  .ss2-btn--xs {
+    font-size: 0.8rem;
+  }
+
+  .ss2-btn--sm {
+    font-size: 1rem;
+  }
+
+  .ss2-btn--md {
+    font-size: 1.2rem;
+  }
+
+  .ss2-btn--xl {
+    font-size: 1.7rem;
+  }
+
+  .ss2-btn {
+    color: white;
+    background: var(--ss-pricing-primary);
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    border: none;
+  }
+
+  .ss2-btn--rounded {
+    border-radius: 9999px;
+  }
+
+  .ss2-btn--outline {
+    background-color: white;
+    color: var(--ss-pricing-primary);
+    // Use box-shadow instead of border because border affects size
+    // and can cause buttons to be different heights
+    box-shadow: inset 0 0 0 2px var(--ss-pricing-primary);
+  }
+
+  // Button group
+  $ss2-input-height: 2.75rem;
+
+  .ss2-btngroup {
+    display: flex;
+    .ss2-btngroup-btn {
+      height: $ss2-input-height;
+      line-height: $ss2-input-height;
+      padding: 0 0.75rem;
+      margin-left: -1px;
+      border: 1px solid #ccc;
+      background-color: white;
+      flex-grow: 1;
+
+      &.ss2-btngroup-btn--active {
+        background-color: var(--ss-pricing-mint-dark);
+        color: white;
+        box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+      }
+
+      &:first-child {
+        margin-left: 0;
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+      }
+      &:last-child {
+        border-top-right-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+      }
+    }
+  }
+
+  // Utility
+  .ss2-viewport-width {
+    width: 100vw;
+    position: relative;
+    left: calc(-50vw + 50%);
+  }
+
+  // Animation
+  // React animation classes for CSSTransition component
+  // @example <CSSTransition classNames="ss2-fade">...
+  // @link https://reactcommunity.org/react-transition-group/css-transition
+  .ss2-fade-enter,
+  .ss2-fade-enter .ss2-transition-delay {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  .ss2-fade-enter-active,
+  .ss2-fade-enter-active .ss2-transition-delay {
+    opacity: 1;
+    transition: all 200ms;
+    transition-timing-function: cubic-bezier();
+    transform: scale(1);
+  }
+  .ss2-fade-exit,
+  .ss2-fade-exit .ss2-transition-delay {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .ss2-fade-exit-active,
+  .ss2-fade-exit-active .ss2-transition-delay {
+    opacity: 0;
+    transition: all 200ms;
+    transition-timing-function: cubic-bezier();
+    transform: scale(0.9);
+  }
+  /*
+  // Fade selected child elements in later than the parent
+  // @fixme
+  .ss2-fade-enter-active .ss2-transition-delay,
+  .ss2-fade-exit .ss2-transition-delay,
+  .ss2-fade-exit-active .ss2-transition-delay
+  {
+    // opacity: 1;
+    // transition: all 2000ms;
+    transition-delay: 200ms;
+  }
+  */
+
+  /*****************************
+    Resets and base styles
+  ******************************/
+  .ss-pricing-tutoring-root {
+    font-family: var(--ss-pricing-font);
+    padding: 0 2rem;
+    max-width: calc(1100px + 4rem);
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    @media (max-width: 599px) {
+      padding: 0 1rem;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  a {
+    color: var(--ss-pricing-primary);
+    text-decoration: none;
+  }
+
+  input,
+  select,
+  option,
+  button {
+    font-family: var(--ss-pricing-font);
+    margin: 0;
+  }
+
+  /*****************************
+    Design
+  ******************************/
+  @media (max-width: 768px) {
+    .ss-pricing__header {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .ss-session-calc-form {
+      flex-direction: column;
+      align-items: center !important;
+
+      .ss-session-calc-select,
+      .ss2-btngroup,
+      .ss-session-calc__btn,
+      & > * {
+        width: 100% !important;
+        flex-basis: 100%;
+      }
+    }
+  }
+
+  .ss-prices {
+    font-size: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(228px, 1fr));
+    grid-gap: 1rem;
+  }
+
+  // Breakpoint where last item appears on own row
+  @media (max-width: 1024px) and (min-width: 768px) {
+    .ss-prices > :last-child {
+      grid-column-start: 2;
+    }
+  }
+
+  .ss-price {
+    @extend .ss2-rounded;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 1.5rem 1rem 0.75rem;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    & > :last-child {
+      margin-top: auto;
+    }
+  }
+
+  .ss-price-custom {
+    border-color: transparent;
+    padding-top: 0;
+  }
+
+  .ss-price-custom__intro {
+    height: 1.5rem; // Set equal to top padding of .ss-price
+  }
+
+  .ss-price__title {
+    font-size: 2.3rem;
+    font-weight: bold;
+  }
+
+  .ss-price__price {
+    font-size: 2.5rem;
+    padding: 1rem 0;
+
+    &.ss-price__price--custom {
+      padding-bottom: 0.25rem;
+    }
+  }
+
+  .ss-price__price-detail--strike {
+    color: #ccc;
+    text-decoration: line-through;
+  }
+
+  .ss-price__button {
+    @extend .ss2-btn;
+    @extend .ss2-btn--xl;
+    margin: 1.5rem 0 0.8rem;
+    padding: 0.9rem 3.8rem;
+    display: block;
+    width: 350px;
+  }
+
+  // Custom hours input
+  .ss2-custhours {
+    display: flex;
+    border: 1px solid #ccc;
+    border-color: var(--ss-pricing-primary);
+    border-color: #aaa;
+    border-width: 2px;
+    border-radius: 999px;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  $ss2-custhours-input-height: 2rem;
+
+  .ss2-custhours__input {
+    font-size: 1.25em;
+    flex-grow: 1;
+    line-height: $ss2-custhours-input-height;
+    height: $ss2-custhours-input-height;
+    padding: 0;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    max-width: 36px;
+    font-weight: bold;
+
+    // Remove arrows from number input
+    &[type='number'] {
+      -moz-appearance: textfield;
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+
+    &::placeholder {
+      color: #ccc;
+    }
+  }
+
+  .ss2-custhours__label {
+    line-height: $ss2-custhours-input-height;
+    font-size: 1.25rem;
+    user-select: none;
+    margin-left: 0.2rem;
+    font-weight: bold;
+  }
+
+  .ss2-custhours__btn {
+    border: none;
+    background-color: transparent;
+    user-select: none;
+    cursor: pointer;
+    width: 2rem;
+    height: $ss2-custhours-input-height;
+    display: inline-block;
+    border-radius: 999px;
+    font-weight: bold;
+    color: #aaa;
+    &:hover,
+    &:active {
+      color: black;
+    }
+  }
+
+  .ss-session-calc-form {
+    align-items: flex-end;
+  }
+
+  .ss-session-calc-select {
+    height: $ss2-input-height;
+    padding: 0 0.75rem;
+    @extend .ss2-rounded;
+    @extend .ss2-border;
+  }
+
+  .ss-session-calc-result {
+    @extend .ss2-box;
+    @extend .ss2-box--inset;
+    @extend .ss2-box--pad;
+    background-color: var(--ss-pricing-mint-lightest);
+  }
+
+  .ss-session-calc-result__btn {
+    @extend .ss2-btn;
+    @extend .ss2-btn--outline;
+    @extend .ss2-btn--sm;
+    display: inline-block;
+    border-color: var(--ss-pricing-mint);
+    background-color: white;
+    color: var(--ss-pricing-mint);
+    height: $ss2-input-height;
+    line-height: $ss2-input-height;
+  }
+
+  .ss-session-calc__btn {
+    @extend .ss2-btn;
+    @extend .ss2-md;
+    background-color: var(--ss-pricing-mint);
+    color: white;
+    border: none;
+    height: $ss2-input-height;
+    line-height: $ss2-input-height;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .ss-session-calc-result__header {
+    color: var(--ss-pricing-mint);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .ss-session-calc-result__callout {
+    font-size: 2rem;
+    border-right: 1px solid var(--ss-pricing-mint);
+    border-color: rgba(0, 0, 0, 0.1);
+    padding-right: 2rem;
+    padding-top: 1rem;
+    margin-right: 2rem;
+    font-weight: bold;
+    white-space: nowrap;
+    flex-basis: 140px;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 640px) {
+    .ss-session-calc-result__header,
+    .ss-session-calc-result__callout,
+    .ss-session-calc-result__cta {
+      text-align: center;
+    }
+    .ss-session-calc-result__body {
+      flex-direction: column;
+
+      .ss-session-calc-result__callout {
+        flex-basis: auto;
+        padding: 0;
+        margin: 0;
+        border-right: none;
+      }
+    }
+  }
+
+  .ss-price__description {
+    font-weight: bold;
+  }
+
+  .ss-price__description-free {
+    @extend .ss2-gray;
+    font-weight: normal;
+  }
+
+  /*****************************
+  ******************************/
+  .ss-package {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  .ss-details-column {
+    width: 500px;
+  }
+  .ss-divider {
+    @extend .text-gray-600;
+    margin: 0.2rem 0 0.8rem 0;
+  }
+
+  .ss-custom-item {
+    display: flex;
+
+    .ss-custom-item-description {
+      max-width: 400px;
+    }
+
+    .ss-custom-item-price {
+      @extend .text-gray-600;
+    }
+
+    .ss-custom-item-add-button {
+      @extend .ss2-btn;
+      @extend .ss2-btn--rounded;
+      @extend .ss2-btn--outline;
+      @extend .ss2-btn--xs;
+      @extend .font-bold;
+
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+      cursor: pointer;
+    }
+
+    .ss-custom-item-add-button-added {
+      &::before {
+        content: '\2713';
+      }
+    }
+
+    .ss-custom-item-sold-out {
+      color: var(--ss-pricing-mid);
+      box-shadow: inset 0 0 0 2px var(--ss-pricing-mid);
+    }
+  }
+  .ss-custom-total-display {
+    @extend .ss2-rounded;
+    @extend .ss2-border;
+    max-width: 700px;
+  }
+
+  @media (min-width: 800px) {
+    // breakpoint above which things should be columns and not stacked
+    .parent-selector {
+      display: flex;
+      gap: 2rem;
+      & > * {
+        flex: 1;
+      }
+    }
+  }
+
+  // Custom hours input
+  .ss2-custhours {
+    display: flex;
+    border: 1px solid #ccc;
+    border-color: var(--ss-pricing-primary);
+    border-width: 2px;
+    border-radius: 999px;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .ss2-custhours__input {
+    font-size: 1.25em;
+    flex-grow: 1;
+    line-height: $ss2-custhours-input-height;
+    height: $ss2-custhours-input-height;
+    padding: 0;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    max-width: 36px;
+    font-weight: bold;
+
+    // Remove arrows from number input
+    &[type='number'] {
+      -moz-appearance: textfield;
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+
+    &::placeholder {
+      color: #ccc;
+    }
+  }
+
+  .ss2-custhours__label {
+    // line-height: $ss2-custhours-input-height;
+    // font-size: 1.25rem;
+    user-select: none;
+    margin-left: 0.2rem;
+    font-weight: bold;
+  }
+
+  .ss2-custhours__btn {
+    border: none;
+    background-color: transparent;
+    user-select: none;
+    cursor: pointer;
+    width: 2rem;
+    height: $ss2-custhours-input-height;
+    display: inline-block;
+    border-radius: 999px;
+    font-weight: bold;
+    color: #aaa;
+    &:hover,
+    &:active {
+      color: black;
+    }
+  }
+}
