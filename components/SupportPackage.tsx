@@ -3,7 +3,7 @@ import * as React from 'react';
 const SupportPackage = () => {
   return (
     <div className="md:flex gap-8">
-      <div id="officer" className="flex-1">
+      <div className="flex-1">
         <header className="font-bold">
           Close the deal with a former admissions officer
         </header>
@@ -13,10 +13,10 @@ const SupportPackage = () => {
           <li>Scholarship negotation strategy.</li>
         </ul>
       </div>
-      <div id="writer" className="flex-1">
-        <header className="font-bold">
+      <div className="flex-1">
+        <div className="font-bold">
           Finalize your materials with professional writer
-        </header>
+        </div>
         <ul className="list-disc">
           <li>Unlimited eiditng of letters of continued interest</li>
           <li>Review correspondence with admissions offices.</li>

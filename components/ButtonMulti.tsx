@@ -79,7 +79,7 @@ const ButtonMulti = ({
     );
   } else {
     button = (
-      <div className={'ss-custom-item-add-button'} onClick={addItemToCart}>
+      <div className="ss-custom-item-add-button" onClick={addItemToCart}>
         Add
       </div>
     );

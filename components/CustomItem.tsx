@@ -68,7 +68,7 @@ const CustomItem = ({
     <div className="ss-custom-item">
       <div className="ss-custom-item-description">
         <div className="font-bold">{title}</div>
-        <div>{description}</div>
+        <div className="ss-custom-item-details">{description}</div>
         <div onClick={handleOpen}> How it works </div>
       </div>
       <div className="ss-custom-item-price">

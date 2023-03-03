@@ -41,6 +41,10 @@ export default function App() {
         <Tabs
           tabs={[
             {
+              button: 'Custom',
+              content: <Custom />,
+            },
+            {
               button: (
                 <span>
                   Admissions Consulting <span className="ss2-mint">Plus</span>
@@ -48,10 +52,7 @@ export default function App() {
               ),
               content: <AdmissionsConsultingPlus />,
             },
-            {
-              button: 'Custom',
-              content: <Custom />,
-            },
+
             {
               button: 'Admissions Consulting',
               content: <AdmissionsConsulting />,
