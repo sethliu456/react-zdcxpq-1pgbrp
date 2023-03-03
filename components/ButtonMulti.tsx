@@ -58,10 +58,8 @@ const ButtonMulti = ({
 
   if (isItemAdded) {
     button = (
-      // <div className="ss2-custhours">
-      <div className="ss-custom-item-add-button">
+      <div className="ss-custom-item-add-button-multi">
         <button
-          aria-label="Decrease hours in custom plan"
           className="ss2-custhours__btn"
           onClick={removeSingelUnit}
         >
@@ -69,7 +67,6 @@ const ButtonMulti = ({
         </button>
         <span className="ss-custhours__label">{getUnitCount()}</span>
         <button
-          aria-label="Decrease hours in custom plan"
           className="ss2-custhours__btn"
           onClick={addSingleUnit}
         >

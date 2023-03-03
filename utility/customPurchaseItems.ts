@@ -73,7 +73,7 @@ const customPurchaseItems = [
   {
     itemName: 'unlimited-edit-essay',
     title: 'Unlimited edit of an essay',
-    price: 1000,
+    price: 100,
     description:
       'Receive ongoing editorial feedback from a published author for as long as it takes to polish one admissions document. We can work with you on an essay you’ve already begun, or else help you start from scratch. ',
     isMultiple: false,

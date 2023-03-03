@@ -67,9 +67,9 @@ const CustomItem = ({
   return (
     <div className="ss-custom-item">
       <div className="ss-custom-item-description">
-        <div className="font-bold">{title}</div>
+        <div className="ss-custom-item-title">{title}</div>
         <div className="ss-custom-item-details">{description}</div>
-        <div onClick={handleOpen}> How it works </div>
+        <div className="ss-custom-item-modal-link" onClick={handleOpen}> How it works </div>
       </div>
       <div className="ss-custom-item-price">
         {buttonType}

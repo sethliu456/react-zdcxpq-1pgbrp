@@ -5,15 +5,17 @@ import PurchaseButton from './PurchaseButton';
 
 const AdmissionsConsultingPlus = () => {
   return (
-    <div className="m-auto">
-      <div className="md:flex justify-around">
-        <div className="md:m-auto mx-auto my-6">
+    <div>
+      <div className="md:flex justify-around my-6">
+        <div className="m-auto flex-1 text-center">
           Work with a former law school admissions officer and a professional
           writer
         </div>
-
-        <PurchaseButton price={1500} link={'google.com'} />
+        <div className="flex-1">
+          <PurchaseButton price={1200} link="www.google.com" />
+        </div>
       </div>
+
       <div className="ss-package-divider">
         <span>After-the-application support</span>
       </div>

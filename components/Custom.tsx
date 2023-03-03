@@ -24,25 +24,48 @@ const Custom = (props) => {
   const getItemPrice = (itemName) => {
     return customPurchaseItems.find((el) => el.itemName == itemName).price;
   };
+  const getItemTitle = (itemName) => {
+    return customPurchaseItems.find((el) => el.itemName == itemName).title;
+  };
 
   const displaySelectedItems = () => {
     return (
       <div className="ss-custom-total-display">
-        <h2>Your selections</h2>
-        <ul className="list-none">
-          {selectedItems.map((selectedItem) => {
-            return (
-              <li>
-                <span className="font-bold">&gt;</span>
-                {selectedItem.count > 1
-                  ? selectedItem.count.toString().concat('x ')
-                  : ''}
-                {selectedItem.itemName}
-                {formatPrice(getItemPrice(selectedItem.itemName))}
-              </li>
-            );
-          })}
-        </ul>
+        <div className="m-5">
+          <h3 className="mx-5">Your selections</h3>
+          <div className="">
+            {selectedItems.map((selectedItem) => {
+              return (
+                <div className="ss-custom-selected">
+                  <div>
+                    <div className="ss-custom-selected-item">
+                      &gt;
+                      {selectedItem.count > 1
+                        ? selectedItem.count.toString().concat('x ')
+                        : ''}
+                      {getItemTitle(selectedItem.itemName)}
+                    </div>
+                  </div>
+                  <div className="text-gray-600">
+                    {formatPrice(getItemPrice(selectedItem.itemName))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <div className="my-4">
+          {selectedItems.length > 0 ? (
+            <PurchaseButton price={getSumPrice()} link={getUrlLink()} />
+          ) : (
+            <a
+              className="ss-price__button ss-price-disabled m-auto"
+              aria-disabled="true"
+            >
+              Add items to order
+            </a>
+          )}
+        </div>
       </div>
     );
   };
@@ -75,46 +98,63 @@ const Custom = (props) => {
 
   return (
     <div id="custompage">
-      <div className="md:flex justify-around">
-        <div className="m-auto flex-1">
+      <div className="md:flex justify-around my-6">
+        <div className="m-auto flex-1 text-center">
           Just order what you need. All custom packages include full access to
           the 7Sage Admissions Course.
         </div>
-        <div className="flex-1">
+        <div className="flex-1 m-auto">
           {selectedItems.length > 0 ? (
             <PurchaseButton price={getSumPrice()} link="www.google.com" />
           ) : (
-            <a className="ss-price__button" aria-disabled="true">
-              Purchase Select Items
-            </a>
+            <div>
+              <a
+                className="ss-price__button ss-price-disabled m-auto"
+                aria-disabled="true"
+              >
+                Add items to order
+              </a>
+              <div className="text-gray-500 text-sm text-center invisible">
+                Or pay in installments of $250/month
+              </div>
+            </div>
           )}
         </div>
       </div>
       <div className="ss-test-grid">
         <div className="ss-test-grid-item">
-          <div>Work with an admissions officer</div>
+          <div className="ss-custom-category-description">
+            Work with an admissions officer
+          </div>
           {displayCustomItem('unlimited-edit-essay')}
           {displayCustomItem('five-school-writing-package')}
         </div>
         <div className="ss-test-grid-item">
-          <div>Work with a professional writer</div>
+          <div className="ss-custom-category-description">
+            Work with a professional writer
+          </div>
           {displayCustomItem('item-sold-out')}
           {displayCustomItem('item-multiple')}
         </div>
         <div className="ss-test-grid-item">
-          <div>After-the-application support</div>
+          <div className="ss-custom-category-description">
+            After-the-application support
+          </div>
           {displayCustomItem('item-sold-out')}
           {displayCustomItem('item-multiple')}
         </div>
         <div className="ss-test-grid-item">
           {displaySelectedItems()}
-          {selectedItems.length > 0 ? (
+          {/* {selectedItems.length > 0 ? (
             <PurchaseButton price={getSumPrice()} link={getUrlLink()} />
           ) : (
-            <a className="ss-price__button" aria-disabled="true">
-              Purchase Select Items
+            <a
+              className="ss-price__button ss-price-disabled m-auto"
+              aria-disabled="true"
+            >
+              Add items to order
             </a>
-          )}
+          )} */}
         </div>
       </div>
     </div>
