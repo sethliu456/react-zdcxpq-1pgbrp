@@ -725,13 +725,18 @@
     font-weight: bold;
   }
 
-  .ss-custom-selected{
+  .ss-custom-selected {
     display: flex;
     justify-content: space-between;
-    margin: .5em 2em;
+    margin: 0.5em 2em;
   }
 
-  .ss-custom-selected-item{
-    @extend .font-bold
+  .ss-custom-selected-item {
+    @extend .font-bold;
+  }
+
+  .ss-modal-buttons {
+    display: flex;
+    justify-content: space-evenly;
   }
 }

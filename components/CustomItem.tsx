@@ -28,7 +28,8 @@ const CustomItem = ({
     transform: 'translate(-50%, -50%)',
     width: 400,
     bgcolor: 'background.paper',
-    border: '2px solid #000',
+    // border: '1px solid #758289',
+    borderRadius: '10px',
     boxShadow: 24,
     p: 4,
   };
@@ -83,17 +84,27 @@ const CustomItem = ({
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
           </Typography>
-          {details.map((detail) => {
-            return (
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                {detail}
-              </Typography>
-            );
-          })}
-          {buttonType}
-          <div onClick={handleClose}>Close</div>
+          <div>
+            {title}
+          </div>
+          <div>
+           {description} 
+          </div>  
+          <ul className='text-base'>
+            {details.map((detail) => {
+              return (
+                <li>
+                  {detail}
+                  </li>
+              )
+            })}
+          </ul>
+
+          <div className="ss-modal-buttons">
+            {buttonType}
+            <div onClick={handleClose}>Close</div>
+          </div>
         </Box>
       </Modal>
       <br></br>
