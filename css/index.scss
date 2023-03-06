@@ -24,16 +24,6 @@
   --ss-pricing-mint-dark: #278881;
 
   /*****************************
-    Custom pricing
-  ******************************/
-  // .ss2-btn-add {
-  //   background: white;
-  //   border: 2px solid var(--ss-pricing-primary);
-  //   border-radius: 999px;
-  //   color: var(--ss-pricing-primary);
-  // }
-
-  /*****************************
     Utility styles
   ******************************/
   // Typography
@@ -99,15 +89,6 @@
 
   /* Components */
 
-  // // HR
-  // .ss2-hr {
-  //   border: none;
-  //   border-top: 1px solid #ccc;
-  //   height: 0;
-  //   margin: 2rem 0;
-  //   width: 100%;
-  // }
-
   // Box
   .ss2-box {
     @extend .ss2-rounded;
@@ -163,82 +144,12 @@
   // Button group
   $ss2-input-height: 2.75rem;
 
-  .ss2-btngroup {
-    display: flex;
-    .ss2-btngroup-btn {
-      height: $ss2-input-height;
-      line-height: $ss2-input-height;
-      padding: 0 0.75rem;
-      margin-left: -1px;
-      border: 1px solid #ccc;
-      background-color: white;
-      flex-grow: 1;
-
-      &.ss2-btngroup-btn--active {
-        background-color: var(--ss-pricing-mint-dark);
-        color: white;
-        box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
-      }
-
-      &:first-child {
-        margin-left: 0;
-        border-top-left-radius: 0.5rem;
-        border-bottom-left-radius: 0.5rem;
-      }
-      &:last-child {
-        border-top-right-radius: 0.5rem;
-        border-bottom-right-radius: 0.5rem;
-      }
-    }
-  }
-
   // Utility
   .ss2-viewport-width {
     width: 100vw;
     position: relative;
     left: calc(-50vw + 50%);
   }
-
-  // Animation
-  // React animation classes for CSSTransition component
-  // @example <CSSTransition classNames="ss2-fade">...
-  // @link https://reactcommunity.org/react-transition-group/css-transition
-  .ss2-fade-enter,
-  .ss2-fade-enter .ss2-transition-delay {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  .ss2-fade-enter-active,
-  .ss2-fade-enter-active .ss2-transition-delay {
-    opacity: 1;
-    transition: all 200ms;
-    transition-timing-function: cubic-bezier();
-    transform: scale(1);
-  }
-  .ss2-fade-exit,
-  .ss2-fade-exit .ss2-transition-delay {
-    opacity: 1;
-    transform: scale(1);
-  }
-  .ss2-fade-exit-active,
-  .ss2-fade-exit-active .ss2-transition-delay {
-    opacity: 0;
-    transition: all 200ms;
-    transition-timing-function: cubic-bezier();
-    transform: scale(0.9);
-  }
-  /*
-  // Fade selected child elements in later than the parent
-  // @fixme
-  .ss2-fade-enter-active .ss2-transition-delay,
-  .ss2-fade-exit .ss2-transition-delay,
-  .ss2-fade-exit-active .ss2-transition-delay
-  {
-    // opacity: 1;
-    // transition: all 2000ms;
-    transition-delay: 200ms;
-  }
-  */
 
   /*****************************
     Resets and base styles
@@ -279,21 +190,6 @@
     .ss-pricing__header {
       flex-direction: column;
       gap: 0;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .ss-session-calc-form {
-      flex-direction: column;
-      align-items: center !important;
-
-      .ss-session-calc-select,
-      .ss2-btngroup,
-      .ss-session-calc__btn,
-      & > * {
-        width: 100% !important;
-        flex-basis: 100%;
-      }
     }
   }
 
@@ -374,151 +270,6 @@
     border-radius: 999px;
     margin: 0 auto;
     align-items: center;
-  }
-
-  $ss2-custhours-input-height: 2rem;
-
-  .ss2-custhours__input {
-    font-size: 1.25em;
-    flex-grow: 1;
-    line-height: $ss2-custhours-input-height;
-    height: $ss2-custhours-input-height;
-    padding: 0;
-    border: none;
-    text-align: center;
-    display: inline-block;
-    max-width: 36px;
-    font-weight: bold;
-
-    // Remove arrows from number input
-    &[type='number'] {
-      -moz-appearance: textfield;
-      &::-webkit-outer-spin-button,
-      &::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
-    }
-
-    &::placeholder {
-      color: #ccc;
-    }
-  }
-
-  .ss2-custhours__label {
-    line-height: $ss2-custhours-input-height;
-    font-size: 1.25rem;
-    user-select: none;
-    margin-left: 0.2rem;
-    font-weight: bold;
-  }
-
-  // .ss2-custhours__btn {
-  //   border: none;
-  //   background-color: transparent;
-  //   user-select: none;
-  //   cursor: pointer;
-  //   width: 2rem;
-  //   height: $ss2-custhours-input-height;
-  //   display: inline-block;
-  //   border-radius: 999px;
-  //   font-weight: bold;
-  //   color: #aaa;
-  //   &:hover,
-  //   &:active {
-  //     color: black;
-  //   }
-  // }
-
-  .ss-session-calc-form {
-    align-items: flex-end;
-  }
-
-  .ss-session-calc-select {
-    height: $ss2-input-height;
-    padding: 0 0.75rem;
-    @extend .ss2-rounded;
-    @extend .ss2-border;
-  }
-
-  .ss-session-calc-result {
-    @extend .ss2-box;
-    @extend .ss2-box--inset;
-    @extend .ss2-box--pad;
-    background-color: var(--ss-pricing-mint-lightest);
-  }
-
-  .ss-session-calc-result__btn {
-    @extend .ss2-btn;
-    @extend .ss2-btn--outline;
-    @extend .ss2-btn--sm;
-    display: inline-block;
-    border-color: var(--ss-pricing-mint);
-    background-color: white;
-    color: var(--ss-pricing-mint);
-    height: $ss2-input-height;
-    line-height: $ss2-input-height;
-  }
-
-  .ss-session-calc__btn {
-    @extend .ss2-btn;
-    @extend .ss2-md;
-    background-color: var(--ss-pricing-mint);
-    color: white;
-    border: none;
-    height: $ss2-input-height;
-    line-height: $ss2-input-height;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  .ss-session-calc-result__header {
-    color: var(--ss-pricing-mint);
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-  }
-
-  .ss-session-calc-result__callout {
-    font-size: 2rem;
-    border-right: 1px solid var(--ss-pricing-mint);
-    border-color: rgba(0, 0, 0, 0.1);
-    padding-right: 2rem;
-    padding-top: 1rem;
-    margin-right: 2rem;
-    font-weight: bold;
-    white-space: nowrap;
-    flex-basis: 140px;
-    flex-grow: 0;
-    flex-shrink: 0;
-  }
-
-  @media (max-width: 640px) {
-    .ss-session-calc-result__header,
-    .ss-session-calc-result__callout,
-    .ss-session-calc-result__cta {
-      text-align: center;
-    }
-    .ss-session-calc-result__body {
-      flex-direction: column;
-
-      .ss-session-calc-result__callout {
-        flex-basis: auto;
-        padding: 0;
-        margin: 0;
-        border-right: none;
-      }
-    }
-  }
-
-  .ss-price__description {
-    font-weight: bold;
-  }
-
-  .ss-price__description-free {
-    @extend .ss2-gray;
-    font-weight: normal;
   }
 
   /*****************************
@@ -618,17 +369,6 @@
     margin: 1.5em 0;
   }
 
-  @media (min-width: 800px) {
-    // breakpoint above which things should be columns and not stacked
-    .parent-selector {
-      display: flex;
-      gap: 2rem;
-      & > * {
-        flex: 1;
-      }
-    }
-  }
-
   // Custom hours input
   .ss2-custhours {
     display: flex;
@@ -638,41 +378,6 @@
     border-radius: 999px;
     margin: 0 auto;
     align-items: center;
-  }
-
-  // .ss2-custhours__input {
-  //   font-size: 1.25em;
-  //   flex-grow: 1;
-  //   line-height: $ss2-custhours-input-height;
-  //   height: $ss2-custhours-input-height;
-  //   padding: 0;
-  //   border: none;
-  //   text-align: center;
-  //   display: inline-block;
-  //   max-width: 36px;
-  //   font-weight: bold;
-
-  //   // Remove arrows from number input
-  //   &[type='number'] {
-  //     -moz-appearance: textfield;
-  //     &::-webkit-outer-spin-button,
-  //     &::-webkit-inner-spin-button {
-  //       -webkit-appearance: none;
-  //       margin: 0;
-  //     }
-  //   }
-
-  //   &::placeholder {
-  //     color: #ccc;
-  //   }
-  // }
-
-  .ss2-custhours__label {
-    // line-height: $ss2-custhours-input-height;
-    // font-size: 1.25rem;
-    user-select: none;
-    margin-left: 0.2rem;
-    font-weight: bold;
   }
 
   .ss2-custhours__btn {
@@ -697,7 +402,7 @@
     margin: 0 1em;
   }
 
-  .ss-test-grid {
+  .ss-custom-component-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2.4em 0.8em;

@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import ButtonMulti from './ButtonMulti';
 import ButtonSingle from './ButtonSingle';
 import Typography from '@mui/material/Typography';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { formatPrice } from './../utility/formatting';
 
 const CustomItem = ({
@@ -70,7 +71,9 @@ const CustomItem = ({
       <div className="ss-custom-item-description">
         <div className="ss-custom-item-title">{title}</div>
         <div className="ss-custom-item-details">{description}</div>
-        <div className="ss-custom-item-modal-link" onClick={handleOpen}> How it works </div>
+        <div className="ss-custom-item-modal-link" onClick={handleOpen}>
+          <ChevronRightIcon /> How it works
+        </div>
       </div>
       <div className="ss-custom-item-price">
         {buttonType}
@@ -83,21 +86,16 @@ const CustomItem = ({
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-          </Typography>
-          <div>
-            {title}
-          </div>
-          <div>
-           {description} 
-          </div>  
-          <ul className='text-base'>
+          <Typography
+            id="modal-modal-title"
+            variant="h6"
+            component="h2"
+          ></Typography>
+          <div>{title}</div>
+          <div>{description}</div>
+          <ul className="text-base">
             {details.map((detail) => {
-              return (
-                <li>
-                  {detail}
-                  </li>
-              )
+              return <li>{detail}</li>;
             })}
           </ul>
 

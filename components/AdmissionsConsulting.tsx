@@ -4,7 +4,6 @@ import PurchaseButton from './PurchaseButton';
 
 const AdmissionsConsulting = () => {
   return (
-    // <div className="m-auto">
     <div>
       <div>
         <div className="md:flex justify-around my-6">

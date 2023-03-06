@@ -1,8 +1,7 @@
-import { dividerClasses } from '@mui/material';
+import * as React from 'react';
 import { useState } from 'react';
 import CustomItem from './CustomItem';
 import PurchaseButton from './PurchaseButton';
-import * as React from 'react';
 import customPurchaseItems from './../utility/customPurchaseItems';
 import { formatPrice } from './../utility/formatting';
 
@@ -84,7 +83,7 @@ const Custom = (props) => {
     return baseUrl.concat(params).slice(0, -1);
   };
 
-  const displayCustomItem = (itemName: string) => {
+  const getCustomItem = (itemName: string) => {
     const item = customPurchaseItems.find((item) => item.itemName == itemName);
     return (
       <CustomItem
@@ -121,27 +120,27 @@ const Custom = (props) => {
           )}
         </div>
       </div>
-      <div className="ss-test-grid">
+      <div className="ss-custom-component-grid">
         <div>
           <div className="ss-custom-category-description">
             Work with an admissions officer
           </div>
-          {displayCustomItem('unlimited-edit-essay')}
-          {displayCustomItem('five-school-writing-package')}
+          {getCustomItem('unlimited-edit-essay')}
+          {getCustomItem('five-school-writing-package')}
         </div>
         <div>
           <div className="ss-custom-category-description">
             Work with a professional writer
           </div>
-          {displayCustomItem('item-sold-out')}
-          {displayCustomItem('item-multiple')}
+          {getCustomItem('item-sold-out')}
+          {getCustomItem('item-multiple')}
         </div>
         <div>
           <div className="ss-custom-category-description">
             After-the-application support
           </div>
-          {displayCustomItem('item-sold-out')}
-          {displayCustomItem('item-multiple')}
+          {getCustomItem('item-sold-out')}
+          {getCustomItem('item-multiple')}
         </div>
         <div>{displaySelectedItems()}</div>
       </div>
