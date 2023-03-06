@@ -122,40 +122,28 @@ const Custom = (props) => {
         </div>
       </div>
       <div className="ss-test-grid">
-        <div className="ss-test-grid-item">
+        <div>
           <div className="ss-custom-category-description">
             Work with an admissions officer
           </div>
           {displayCustomItem('unlimited-edit-essay')}
           {displayCustomItem('five-school-writing-package')}
         </div>
-        <div className="ss-test-grid-item">
+        <div>
           <div className="ss-custom-category-description">
             Work with a professional writer
           </div>
           {displayCustomItem('item-sold-out')}
           {displayCustomItem('item-multiple')}
         </div>
-        <div className="ss-test-grid-item">
+        <div>
           <div className="ss-custom-category-description">
             After-the-application support
           </div>
           {displayCustomItem('item-sold-out')}
           {displayCustomItem('item-multiple')}
         </div>
-        <div className="ss-test-grid-item">
-          {displaySelectedItems()}
-          {/* {selectedItems.length > 0 ? (
-            <PurchaseButton price={getSumPrice()} link={getUrlLink()} />
-          ) : (
-            <a
-              className="ss-price__button ss-price-disabled m-auto"
-              aria-disabled="true"
-            >
-              Add items to order
-            </a>
-          )} */}
-        </div>
+        <div>{displaySelectedItems()}</div>
       </div>
     </div>
   );
